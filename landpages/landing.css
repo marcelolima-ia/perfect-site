@@ -1,0 +1,79 @@
+/* ===========================================================
+   Landing Pages — Perfect Cirurgia Plástica
+   (usa as variáveis e componentes de ../css/style.css)
+   =========================================================== */
+
+/* Barra superior simplificada */
+.lp-bar { position: absolute; top: 0; left: 0; width: 100%; z-index: 50; padding: 1.5rem 0; }
+.lp-bar .nav { display: flex; align-items: center; justify-content: space-between; }
+.lp-bar .logo .name { color: #fff; }
+.lp-bar .logo .tag { color: var(--gold-light); }
+.lp-bar .lp-phone { color: #fff; font-weight: 600; font-size: .9rem; letter-spacing: .04em; }
+
+/* Hero com formulário + imagem de fundo */
+.lp-hero { position: relative; overflow: hidden; padding: 9.5rem 0 5rem;
+  background-color: #0a1716; background-size: cover; background-position: center; }
+.lp-hero::before { content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(120deg, rgba(10,23,22,.94) 0%, rgba(14,38,37,.86) 55%, rgba(18,58,56,.72) 100%),
+    radial-gradient(circle at 82% 18%, rgba(53,188,194,.28), transparent 55%); }
+
+/* ✨ Brilho que varre o botão (chama atenção) */
+.shine { position: relative; overflow: hidden; }
+.shine::after { content: ""; position: absolute; top: 0; left: -130%; width: 55%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-20deg); animation: shine 3.4s infinite; pointer-events: none; }
+@keyframes shine { 0% { left: -130%; } 55% { left: 150%; } 100% { left: 150%; } }
+
+/* ✨ Selo pulsante de destaque no hero */
+.lp-glow-badge { display: inline-flex; align-items: center; gap: .5rem; margin-bottom: 1.1rem;
+  background: rgba(53,188,194,.14); color: var(--gold-light); border: 1px solid rgba(53,188,194,.45);
+  padding: .45rem 1.1rem; border-radius: 50px; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
+  animation: glowpulse 2.4s infinite; }
+@keyframes glowpulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(53,188,194,.5); } 50% { box-shadow: 0 0 24px 3px rgba(53,188,194,.65); } }
+
+/* Leve brilho no card do formulário */
+.lp-form-card { animation: cardglow 3.5s ease-in-out infinite; }
+@keyframes cardglow { 0%, 100% { box-shadow: 0 30px 70px rgba(0,0,0,.35); } 50% { box-shadow: 0 30px 70px rgba(0,0,0,.35), 0 0 36px rgba(53,188,194,.4); } }
+.lp-hero .container { position: relative; z-index: 2; }
+.lp-hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3rem; align-items: center; }
+.lp-hero-text { max-width: 680px; }
+.lp-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.8rem 0 1.4rem; }
+.lp-hero .eyebrow { color: var(--gold-light); }
+.lp-hero h1 { color: #fff; font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.1; }
+.lp-hero h1 em { color: var(--gold-light); font-style: italic; }
+.lp-lead { color: rgba(255,255,255,.82); font-size: 1.1rem; margin: 1.1rem 0 1.5rem; max-width: 520px; }
+
+.lp-points { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin-bottom: 1.6rem; }
+.lp-points li { color: rgba(255,255,255,.92); display: flex; gap: .65rem; align-items: flex-start; font-size: .98rem; }
+.lp-points li svg { color: var(--gold-light); flex-shrink: 0; margin-top: 2px; }
+
+.lp-trust { display: flex; gap: 1.6rem; flex-wrap: wrap; margin-top: .5rem;
+  color: rgba(255,255,255,.55); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; }
+.lp-trust span { display: flex; align-items: center; gap: .4rem; }
+
+/* Card do formulário no hero */
+.lp-form-card { background: #fff; border-radius: var(--radius); padding: 2.2rem; box-shadow: 0 30px 70px rgba(0,0,0,.35); }
+.lp-form-card h3 { font-size: 1.6rem; margin-bottom: .3rem; }
+.lp-form-card .sub { color: var(--ink-soft); font-size: .92rem; margin-bottom: 1.4rem; }
+.lp-or { text-align: center; margin: 1rem 0 .3rem; color: var(--ink-soft); font-size: .82rem; }
+
+/* Tipos de procedimento */
+.lp-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.lp-type { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; transition: .35s; text-align: center; }
+.lp-type:hover { box-shadow: var(--shadow); transform: translateY(-6px); }
+.lp-type .ic { width: 64px; height: 64px; margin: 0 auto 1.1rem; border-radius: 50%; background: var(--cream-2); color: var(--gold-dark); display: grid; place-items: center; }
+.lp-type h3 { font-size: 1.4rem; margin-bottom: .5rem; }
+.lp-type p { color: var(--ink-soft); font-size: .93rem; }
+
+/* Faixa de números */
+.lp-stats { background: var(--cream-2); }
+.lp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; }
+.lp-stat .num { font-family: var(--serif); font-size: 2.8rem; font-weight: 700; color: var(--gold-dark); line-height: 1; }
+.lp-stat .lbl { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin-top: .4rem; }
+
+@media (max-width: 860px) {
+  .lp-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+  .lp-types, .lp-stats-grid { grid-template-columns: 1fr; }
+  .lp-stats-grid { gap: 2rem; }
+}
