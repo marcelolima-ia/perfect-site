@@ -1,0 +1,7 @@
+services:
+  site:
+    build: .
+    container_name: perfect-site
+    ports:
+      - "8080:80"
+    restart: unless-stopped
